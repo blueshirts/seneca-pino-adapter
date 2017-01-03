@@ -4,6 +4,7 @@
 # Seneca Pino Adapter
 
 [![Npm][BadgeNpm]][Npm]
+[![Build Status][travis-badge]][travis-url]
 
 A log adapter for the Seneca microservice toolkit that enables you to output your logs to Pino.  The code in this 
 project follows the Seneca custom logger example.
@@ -13,7 +14,7 @@ https://github.com/senecajs/seneca/blob/master/docs/examples/custom-logger.js
 
 ## Why?
 
-I have been working with Seneca for a short period of time and while I found the toolkit very useful I was very
+I have been working with Seneca for a short period of time and while I found the toolkit very useful though I was very
 frustrated by the lack of ability to manage and control my log output.  I found a few examples that enabled external
 loggers such as Pino and I am hopeful this adapter along with other Pino add-ons will satisfy my requirements. 
 
@@ -129,4 +130,6 @@ https://github.com/senecajs/seneca-pino-logger
 
 
 [Logo]: http://senecajs.org/files/assets/seneca-logo.jpg
-[Npm]: https://www.npmjs.com/package/seneca
+[Npm]: https://www.npmjs.com/package/seneca-pino-adapter
+[travis-badge]: https://travis-ci.org/senecajs/seneca-pino-adapter.svg
+[travis-url]: https://travis-ci.org/senecajs/seneca-pino-adapter
