@@ -80,7 +80,9 @@ This option will allow you complete control over creating a pino logger instance
       legacy: {logging: false},
       internal: {
         logger: new PinoLogAdapter({
-          config: logger
+          config: {
+            level: 'info'
+          }
         }).logger
       }
     })
@@ -93,7 +95,9 @@ or
       legacy: {logging: false},
       internal: {
         logger: new PinoLogAdapter({
-          config: logger,
+          config: {
+            level: 'info'
+          },
           stream: output_stream
         }).logger
       }
