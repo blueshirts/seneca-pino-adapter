@@ -1,0 +1,5 @@
+# Ingore project files.
+.idea/
+
+# Transient artifacts.
+node_modules

@@ -1,0 +1,42 @@
+{
+  "name": "seneca-pino-adapter",
+  "version": "0.0.1",
+  "description": "A Pino log adapter for the Seneca framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueshirts/seneca-pino-adapter.git"
+  },
+  "keywords": [
+    "seneca",
+    "pino",
+    "logger"
+  ],
+  "author": "Anthony Milano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blueshirts/seneca-pino-adapter/issues"
+  },
+  "homepage": "https://github.com/blueshirts/seneca-pino-adapter#readme",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "app-root-path": "^2.x",
+    "chai": "^3.5.0",
+    "memorystream": "*",
+    "mocha": "^3.2.0",
+    "pino": "^3.0.x",
+    "pino-debug": "^1.0.x",
+    "seneca": "^3.2.x",
+    "should": "^11.1.x"
+  },
+  "peerDependencies": {
+    "pino": ">= 3.0.x",
+    "seneca": ">= 3.0.x"
+  }
+}
