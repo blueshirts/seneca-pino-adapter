@@ -3,7 +3,7 @@
 
 # Seneca Pino Adapter
 
-[![Npm][BadgeNpm]][Npm]
+[![npm version](https://badge.fury.io/js/seneca-pino-adapter.svg)](https://badge.fury.io/js/seneca-pino-adapter)
 [![Build Status][travis-badge]][travis-url]
 
 A log adapter for the Seneca microservice toolkit that enables you to output your logs to Pino.  The code in this 
@@ -80,7 +80,9 @@ This option will allow you complete control over creating a pino logger instance
       legacy: {logging: false},
       internal: {
         logger: new PinoLogAdapter({
-          config: logger
+          config: {
+            level: 'info'
+          }
         }).logger
       }
     })
@@ -93,7 +95,9 @@ or
       legacy: {logging: false},
       internal: {
         logger: new PinoLogAdapter({
-          config: logger,
+          config: {
+            level: 'info'
+          },
           stream: output_stream
         }).logger
       }
@@ -131,6 +135,6 @@ https://github.com/senecajs/seneca-pino-logger
 
 [Logo]: http://senecajs.org/files/assets/seneca-logo.jpg
 [npm-url]: https://npmjs.com/package/seneca-pino-adapter
-[npm-badge]: https://img.shields.io/npm/v/seneca-pino-adapter.svg
-[travis-badge]: https://travis-ci.org/senecajs/seneca-pino-adapter.svg
+[npm-badge]: https://badge.fury.io/js/seneca-pino-adapter.svg
+[travis-badge]: https://api.travis-ci.org/blueshirts/seneca-pino-adapter.svg
 [travis-url]: https://travis-ci.org/blueshirts/seneca-pino-adapter
