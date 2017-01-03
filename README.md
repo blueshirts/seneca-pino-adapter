@@ -130,6 +130,7 @@ https://github.com/senecajs/seneca-pino-logger
 
 
 [Logo]: http://senecajs.org/files/assets/seneca-logo.jpg
-[Npm]: https://www.npmjs.com/package/seneca-pino-adapter
+[npm-url]: https://npmjs.com/package/seneca-pino-adapter
+[npm-badge]: https://img.shields.io/npm/v/seneca-pino-adapter.svg
 [travis-badge]: https://travis-ci.org/senecajs/seneca-pino-adapter.svg
 [travis-url]: https://travis-ci.org/senecajs/seneca-pino-adapter
