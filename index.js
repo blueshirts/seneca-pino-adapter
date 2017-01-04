@@ -19,8 +19,9 @@ class PinoLogAdapter {
    * @param options.config - a Pino logger configuration.
    * @param options.stream - an optional output stream to log to.
    */
-  constructor(options = {}) {
+  constructor(options) {
     // Assertions.
+    options = options ? options : {}
     assert(!(options.config && options.logger), '"config" and "logger" specified.  Use one or the other.')
     assert(options.config || options.logger, '"config" or "logger must be specified.')
 
