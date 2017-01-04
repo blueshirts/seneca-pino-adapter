@@ -6,7 +6,7 @@ const pino = require('pino')
 /**
  * Custom Seneca logger for use with Pino.
  *
- * This project is based on the example conventions docuemented at the following Seneca url.
+ * This project is based on the example conventions documented at the following Seneca url.
  *
  * -  https://github.com/senecajs/seneca/blob/master/docs/examples/custom-logger.js
  *
@@ -20,8 +20,10 @@ class PinoLogAdapter {
    * @param options.stream - an optional output stream to log to.
    */
   constructor(options = {}) {
+    // Assertions.
     assert(!(options.config && options.logger), '"config" and "logger" specified.  Use one or the other.')
     assert(options.config || options.logger, '"config" or "logger must be specified.')
+
     if (options.stream) {
       // Don't supply stream and a logger instance.
       assert(!options.logger, '"logger" and "stream" are specified, Use config with stream.')
@@ -29,15 +31,19 @@ class PinoLogAdapter {
 
     if (options.config) {
       if (options.stream) {
+        // A stream was also supplied.
         this._logger = pino(options.config, options.stream)
-      }
-      else {
+      } else {
+        // Initialize using a configuration.
         this._logger = pino(options.config)
       }
-    }
-    else {
+    } else {
+      // A pino logger was supplied.
       this._logger = options.logger
     }
+
+    // Return the logger class simplify the usage.
+    return this.logger
   }
 
   /**
@@ -45,7 +51,6 @@ class PinoLogAdapter {
    * @returns {PinoLogger} - the log adapter.
    */
   get logger() {
-    // TODO: Convert to ES6 class.
     const parent = this
 
     function PinoLogger() {
@@ -89,4 +94,5 @@ class PinoLogAdapter {
   }
 }
 
+// Export the adapter.
 module.exports = PinoLogAdapter

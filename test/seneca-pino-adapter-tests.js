@@ -1,20 +1,20 @@
+'use strict'
+
 // Testing support.
 const chai = require('chai')
 chai.config.includeStack = true
 const should = chai.Should()
 
 // Seneca support.
-const seneca_lib = require('seneca')
+const Seneca = require('seneca')
 
 // Pino support.
-const pino = require('pino')
-// TODO: Attempt to utilize this.
-const pino_debug = require('pino-debug')
+const Pino = require('pino')
 
 // Use memory stream to assert log output.
 const memory_stream_lib = require('memorystream')
 // Add a reset buffer capability to memory stream.
-const memory_stream = function () {
+const MemoryStream = function () {
   const s = memory_stream_lib.createWriteStream()
   s.reset = function () {
     // Clear the buffer.
@@ -52,14 +52,13 @@ describe('seneca-pino-adapter-tests', function () {
   describe('PinoLogAdapter tests', function () {
 
     it('should allow configuration via a pino instance', function () {
-      const ostream = memory_stream()
-      const logger = pino({level: 'info'}, ostream)
-      const seneca = seneca_lib({
-        legacy: {logging: false},
+      const ostream = MemoryStream()
+      const logger = Pino({level: 'info'}, ostream)
+      const seneca = Seneca({
         internal: {
           logger: new PinoLogAdapter({
             logger: logger
-          }).logger
+          })
         }
       })
 
@@ -68,8 +67,8 @@ describe('seneca-pino-adapter-tests', function () {
 
     it('should allow configuration via a pino configuration', function () {
       // Create a stream to monitor the output.
-      const ostream = memory_stream()
-      const seneca = seneca_lib({
+      const ostream = MemoryStream()
+      const seneca = Seneca({
         legacy: {logging: false},
         internal: {
           logger: new PinoLogAdapter({
@@ -77,7 +76,7 @@ describe('seneca-pino-adapter-tests', function () {
               level: 'info'
             },
             stream: ostream
-          }).logger
+          })
         }
       })
 
@@ -94,7 +93,7 @@ describe('seneca-pino-adapter-tests', function () {
       should.throw(function () {
         new PinoLogAdapter({
           config: {},
-          logger: pino()
+          logger: Pino()
         })
       })
     })

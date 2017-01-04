@@ -5,6 +5,7 @@ env:
   - SENECA_VER=@3.x.x
 
 node_js:
+  - "4"
   - "6"
 
 cache:
