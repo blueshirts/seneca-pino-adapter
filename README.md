@@ -44,6 +44,9 @@ This option will allow you complete control over creating a pino logger instance
     // Pino Support.
     const Pino = require('pino')
     
+    // Load the adapter.
+    const PinoLogAdapter = require('seneca-pino-adapter')
+    
     // Create a pino logger instance.
     const logger = Pino({level: 'info'})
     
@@ -57,19 +60,20 @@ This option will allow you complete control over creating a pino logger instance
     })
     
     // Log output via Seneca.
-    log.debug('This is a debug log statement!')
-    log.info('This is an info log statement!')
-    log.error('This is an error log statement!')
-    log.warn('This is a warn log statement!')
-    log.fatal('This is a fatal log statement!')
+    seneca.log.debug('This is a debug log statement!')
+    seneca.log.info('This is an info log statement!')
+    seneca.log.error('This is an error log statement!')
+    seneca.log.warn('This is a warn log statement!')
+    seneca.log.fatal('This is a fatal log statement!')
     
-    // Use pino-debug to enable fine grained control over log output.
-    TBD
 
 ### Configure Using a Pino Logger Configuration
 
     // Seneca support.
     const Seneca = require('seneca')
+    
+    // Load the adapter.
+    const PinoLogAdapter = require('seneca-pino-adapter')
     
     // Create a pino logger instance using configuration.
     const config = {level: 'info'}
@@ -84,6 +88,13 @@ This option will allow you complete control over creating a pino logger instance
         })
       }
     })
+    
+    // Log output via Seneca.
+    seneca.log.debug('This is a debug log statement!')
+    seneca.log.info('This is an info log statement!')
+    seneca.log.error('This is an error log statement!')
+    seneca.log.warn('This is a warn log statement!')
+    seneca.log.fatal('This is a fatal log statement!')
     
 
 or 
@@ -100,16 +111,13 @@ or
       }
     })
     
-
-## Pino Debug
-
-The pino-debug project seems to allow you to control your log output at very detailed level.
-
-> Seamlessly integrates the debug module with the high performance pino logger so you can turn on debug logs in 
-production scenarios with minimum overhead.
-
-https://github.com/pinojs/pino-debug
-
+    // Log output via Seneca.
+    seneca.log.debug('This is a debug log statement!')
+    seneca.log.info('This is an info log statement!')
+    seneca.log.error('This is an error log statement!')
+    seneca.log.warn('This is a warn log statement!')
+    seneca.log.fatal('This is a fatal log statement!')
+    
 
 ## Caveats
 
