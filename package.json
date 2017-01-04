@@ -1,6 +1,6 @@
 {
   "name": "seneca-pino-adapter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Pino log adapter for the Seneca framework.",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,10 @@
   "keywords": [
     "seneca",
     "pino",
-    "logger"
+    "node",
+    "microservice",
+    "logger",
+    "custuom"
   ],
   "author": "Anthony Milano",
   "license": "ISC",
@@ -24,14 +27,14 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "app-root-path": "^2.x",
     "chai": "^3.5.0",
     "memorystream": "*",
     "mocha": "^3.2.0",
     "pino": "^3.0.x",
-    "pino-debug": "^1.0.x",
     "seneca": "^3.2.x",
     "should": "^11.1.x"
   },

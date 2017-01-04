@@ -39,80 +39,85 @@ https://github.com/pinojs/pino
 This option will allow you complete control over creating a pino logger instance.
 
     // Seneca support.
-    const seneca_lib = require('seneca')
+    const Seneca = require('seneca')
+    
+    // Pino Support.
+    const Pino = require('pino')
+    
+    // Load the adapter.
+    const PinoLogAdapter = require('seneca-pino-adapter')
     
     // Create a pino logger instance.
-    const logger = pino({level: 'info'})
+    const logger = Pino({level: 'info'})
     
     // Initialize the Seneca toolkit with the PinoLogAdapter and a Pino instance.
-    const seneca = seneca_lib({
-      legacy: {logging: false},
+    const seneca = Seneca({
       internal: {
         logger: new PinoLogAdapter({
           logger: logger
-        }).logger
+        })
       }
     })
     
     // Log output via Seneca.
-    log.debug('This is a debug log statement!')
-    log.info('This is an info log statement!')
-    log.error('This is an error log statement!')
-    log.warn('This is a warn log statement!')
-    log.fatal('This is a fatal log statement!')
+    seneca.log.debug('This is a debug log statement!')
+    seneca.log.info('This is an info log statement!')
+    seneca.log.error('This is an error log statement!')
+    seneca.log.warn('This is a warn log statement!')
+    seneca.log.fatal('This is a fatal log statement!')
     
-    // Use the pino log instance to dynamically change the log level.
-    logger.level = 'debug'
-    
-    // Use pino-debug to enable fine grained control over log output.
-    TBD
 
 ### Configure Using a Pino Logger Configuration
 
     // Seneca support.
-    const seneca_lib = require('seneca')
-
+    const Seneca = require('seneca')
+    
+    // Load the adapter.
+    const PinoLogAdapter = require('seneca-pino-adapter')
+    
     // Create a pino logger instance using configuration.
     const config = {level: 'info'}
     
     // Initialize the Seneca toolkit with the PinoLogAdapter and a Pino configuration object.
-    const seneca = seneca_lib({
-      legacy: {logging: false},
+    const seneca = Seneca({
       internal: {
         logger: new PinoLogAdapter({
           config: {
             level: 'info'
           }
-        }).logger
+        })
       }
     })
+    
+    // Log output via Seneca.
+    seneca.log.debug('This is a debug log statement!')
+    seneca.log.info('This is an info log statement!')
+    seneca.log.error('This is an error log statement!')
+    seneca.log.warn('This is a warn log statement!')
+    seneca.log.fatal('This is a fatal log statement!')
     
 
 or 
 
     // Initialize the Seneca toolkit with the PinoLogAdapter and a Pino configuration object and a output stream.
-    const seneca = seneca_lib({
-      legacy: {logging: false},
+    const seneca = Seneca({
       internal: {
         logger: new PinoLogAdapter({
           config: {
             level: 'info'
           },
           stream: output_stream
-        }).logger
+        })
       }
     })
     
-
-## Pino Debug
-
-The pino-debug project seems to allow you to control your log output at very detailed level.
-
-> Seamlessly integrates the debug module with the high performance pino logger so you can turn on debug logs in 
-production scenarios with minimum overhead.
-
-https://github.com/pinojs/pino-debug
-
+    // Log output via Seneca.
+    seneca.log.debug('This is a debug log statement!')
+    seneca.log.info('This is an info log statement!')
+    seneca.log.error('This is an error log statement!')
+    seneca.log.warn('This is a warn log statement!')
+    seneca.log.fatal('This is a fatal log statement!')
+    
 
 ## Caveats
 
