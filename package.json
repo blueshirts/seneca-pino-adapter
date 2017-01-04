@@ -1,6 +1,6 @@
 {
   "name": "seneca-pino-adapter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Pino log adapter for the Seneca framework.",
   "main": "index.js",
   "scripts": {
