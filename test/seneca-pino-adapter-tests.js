@@ -108,7 +108,7 @@ describe('seneca-pino-adapter-tests', function () {
  * @param logger - a optional pino logger instance.
  * @param ostream - the output log stream.
  */
-function assert_logging(seneca, logger = null, ostream) {
+function assert_logging(seneca, logger, ostream) {
   // Seneca should exist.
   should.exist(seneca)
   should.exist(seneca.log)
