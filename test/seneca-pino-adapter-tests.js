@@ -1,5 +1,11 @@
 'use strict'
 
+const Lab = require('lab')
+
+const lab = (exports.lab = Lab.script())
+const describe = lab.describe
+const it = lab.it
+
 // Testing support.
 const chai = require('chai')
 chai.config.includeStack = true
@@ -51,7 +57,7 @@ describe('seneca-pino-adapter-tests', function () {
 
   describe('PinoLogAdapter tests', function () {
 
-    it('should allow configuration via a pino instance', function () {
+    it('should allow configuration via a pino instance', function (done) {
       const ostream = MemoryStream()
       const logger = Pino({level: 'info'}, ostream)
       const seneca = Seneca({
@@ -63,9 +69,10 @@ describe('seneca-pino-adapter-tests', function () {
       })
 
       assert_logging(seneca, logger, ostream)
+      done()
     })
 
-    it('should allow configuration via a pino configuration', function () {
+    it('should allow configuration via a pino configuration and stream', function (done) {
       // Create a stream to monitor the output.
       const ostream = MemoryStream()
       const seneca = Seneca({
@@ -81,21 +88,55 @@ describe('seneca-pino-adapter-tests', function () {
       })
 
       assert_logging(seneca, null, ostream)
+      done()
     })
 
-    it('should throw an error if no config or logger is specified', function () {
+    it('should allow configuration via a pino configuration', (done) => {
+      // Without the stream there is no way to assert the output.
+      const seneca = Seneca({
+        internal: {
+          logger: new PinoLogAdapter({
+            config: {
+              level: 'error'
+            }
+          })
+        }
+      })
+      seneca.log.debug(DEBUG)
+      done()
+    })
+
+    it('should throw an error if an invalid log level is specified', (done) => {
+      // Create a stream to monitor the output.
+      should.throw(function() {
+        Seneca({
+          internal: {
+            logger: new PinoLogAdapter({
+              config: {
+                level: 'invalid-level'
+              }
+            })
+          }
+        })
+      })
+      done()
+    })
+
+    it('should throw an error if no config or logger is specified', function (done) {
       should.throw(function () {
         new PinoLogAdapter()
       })
+      done()
     })
 
-    it('should throw an error if both a config and logger are specified', function () {
+    it('should throw an error if both a config and logger are specified', function (done) {
       should.throw(function () {
         new PinoLogAdapter({
           config: {},
           logger: Pino()
         })
       })
+      done()
     })
 
   })

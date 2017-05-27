@@ -1,5 +1,7 @@
 # Ingore project files.
 .idea/
+*buffergator*
 
 # Transient artifacts.
 node_modules
+doc/coverage.html
