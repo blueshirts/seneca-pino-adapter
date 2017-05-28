@@ -5,7 +5,7 @@
 
 [![npm version](https://badge.fury.io/js/seneca-pino-adapter.svg)](https://badge.fury.io/js/seneca-pino-adapter)
 [![Build Status][travis-badge]][travis-url]
-[![Coverage Status](coveralls-badge)](coveralls-url)
+[![Coverage Status][coveralls-badge]][coveralls-url]
 
 A log adapter for the Seneca microservice toolkit that enables you to output your logs to Pino.  The code in this 
 project follows the Seneca custom logger example.
