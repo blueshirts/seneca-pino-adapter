@@ -145,3 +145,5 @@ https://github.com/senecajs/seneca-pino-logger
 [travis-badge]: https://api.travis-ci.org/blueshirts/seneca-pino-adapter.svg
 [travis-url]: https://travis-ci.org/blueshirts/seneca-pino-adapter
 [BadgeCoveralls]: https://coveralls.io/repos/blueshirts/seneca-pino-adapter/badge.svg?branch=senecamaster&service=github
+[Coveralls]: https://coveralls.io/github/blueshirts/seneca-pino-adapter?branch=master
+
