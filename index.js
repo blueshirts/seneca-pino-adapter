@@ -71,15 +71,9 @@ class PinoLogAdapter {
         // Avoid duplicate level data in the output.
         delete payload.level
 
-        if (level in parent._logger) {
-          // Call the appropriate Pino log function.
-          parent._logger[level].call(parent._logger, payload)
-        }
-        else {
-          // Default to info if the level isn't found.
-          // TODO: Support custom levels.
-          parent._logger.info(payload)
-        }
+        // Call the appropriate Pino log function. The level should always exist because
+        // Pino will throw an exception if the supplied level is not valid.
+        parent._logger[level].call(parent._logger, payload)
       }
 
       // Seneca looks for logging adapters in `extend.logger`
