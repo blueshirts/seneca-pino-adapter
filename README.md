@@ -5,8 +5,7 @@
 
 [![npm version](https://badge.fury.io/js/seneca-pino-adapter.svg)](https://badge.fury.io/js/seneca-pino-adapter)
 [![Build Status][travis-badge]][travis-url]
-
-[![Coverage Status](https://coveralls.io/repos/github/blueshirts/seneca-pino-adapter/badge.svg?branch=master)](https://coveralls.io/github/blueshirts/seneca-pino-adapter?branch=master)
+[![Coverage Status](coveralls-badge)](coveralls-url)
 
 A log adapter for the Seneca microservice toolkit that enables you to output your logs to Pino.  The code in this 
 project follows the Seneca custom logger example.
@@ -145,6 +144,6 @@ https://github.com/senecajs/seneca-pino-logger
 [npm-badge]: https://badge.fury.io/js/seneca-pino-adapter.svg
 [travis-badge]: https://api.travis-ci.org/blueshirts/seneca-pino-adapter.svg
 [travis-url]: https://travis-ci.org/blueshirts/seneca-pino-adapter
-[BadgeCoveralls]: https://coveralls.io/repos/blueshirts/seneca-pino-adapter/badge.svg?branch=senecamaster&service=github
-[Coveralls]: https://coveralls.io/github/blueshirts/seneca-pino-adapter?branch=master
+[coveralls-badge]: https://coveralls.io/repos/github/blueshirts/seneca-pino-adapter/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/blueshirts/seneca-pino-adapter?branch=master
 
